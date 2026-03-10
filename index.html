@@ -3,230 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaibhav Jagtap | Robotics & Embedded Systems</title>
-    <!-- Modern Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Vaibhav Jagtap | Robotics & Embedded Systems Engineer</title>
+    <!-- Modern UI Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconography -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <style>
         :root {
-            --bg: #050505;
-            --accent: #00f2ff;
-            --primary: #7000ff;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-            --text: #ffffff;
-            --text-dim: #a0a0a0;
+            --bg: #030014;
+            --accent: #00d2ff;
+            --primary: #5865f2;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(112, 0, 255, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(0, 242, 255, 0.15) 0%, transparent 40%);
-            background-attachment: fixed;
+            line-height: 1.6;
         }
 
-        /* Nav */
+        /* Ambient Glow */
+        .glow {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(88, 101, 242, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+        .glow-1 { top: -20%; left: -20%; }
+        .glow-2 { bottom: -20%; right: -20%; }
+
+        /* Navigation */
         nav {
             position: fixed;
-            top: 0; width: 100%;
-            padding: 20px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            backdrop-filter: blur(10px);
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            padding: 14px 35px;
+            background: rgba(15, 15, 25, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
         }
-        .logo { font-family: 'Space Grotesk'; font-weight: 800; font-size: 24px; letter-spacing: -1px; }
-        .logo span { color: var(--accent); }
+        .logo { font-family: 'Space Grotesk'; font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .logo span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--text); text-shadow: 0 0 10px var(--accent); }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--text-main); }
 
-        /* Hero */
+        /* Hero Section */
         .hero {
             height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 0 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
         }
-        .hero h1 {
+        .hero-badge {
+            padding: 8px 20px;
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            color: var(--accent);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+        h1 {
             font-family: 'Space Grotesk';
-            font-size: clamp(40px, 10vw, 100px);
-            font-weight: 700; line-height: 0.9;
-            margin-bottom: 20px;
+            font-size: clamp(45px, 9vw, 110px);
+            font-weight: 700;
+            line-height: 0.95;
+            margin-bottom: 25px;
+            letter-spacing: -4px;
         }
-        .hero p { font-size: 20px; color: var(--text-dim); max-width: 700px; margin-bottom: 40px; }
-        .btn {
-            padding: 15px 40px;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            border: none; border-radius: 5px;
-            color: white; font-weight: 700; text-decoration: none;
-            text-transform: uppercase; letter-spacing: 2px;
+        h1 span { display: block; color: var(--text-muted); opacity: 0.6; }
+        .hero p { max-width: 750px; color: var(--text-muted); font-size: 20px; margin-bottom: 45px; font-weight: 400; }
+        
+        .btn { padding: 16px 36px; border-radius: 16px; font-weight: 700; text-decoration: none; transition: var(--transition); display: flex; align-items: center; gap: 12px; cursor: pointer; border: none; font-size: 16px; }
+        .btn-primary { background: var(--gradient); color: white; box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 210, 255, 0.4); }
+
+        /* General Section Styling */
+        section { padding: 120px 7%; max-width: 1400px; margin: 0 auto; }
+        .section-header { margin-bottom: 60px; }
+        .section-title { font-family: 'Space Grotesk'; font-size: 50px; font-weight: 700; letter-spacing: -1px; }
+
+        /* Card System */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 32px; 
+            padding: 45px; 
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        .card:hover { border-color: rgba(0, 210, 255, 0.5); background: rgba(255, 255, 255, 0.05); transform: translateY(-10px) scale(1.02); }
+        
+        .icon-box {
+            width: 65px; height: 65px;
+            background: rgba(88, 101, 242, 0.1);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+        .tag { 
+            padding: 8px 18px; 
+            background: rgba(255, 255, 255, 0.04); 
+            border: 1px solid var(--border); 
+            border-radius: 100px; 
+            font-size: 13px; 
+            font-weight: 500;
+            color: var(--text-muted);
             transition: 0.3s;
         }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(112, 0, 255, 0.5); }
+        .tag:hover { border-color: var(--accent); color: var(--text-main); background: rgba(0, 210, 255, 0.1); }
 
-        /* Sections */
-        section { padding: 100px 10%; }
-        h2 { font-family: 'Space Grotesk'; font-size: 40px; margin-bottom: 50px; border-left: 5px solid var(--accent); padding-left: 20px; }
+        /* Experience Timeline */
+        .timeline { border-left: 2px solid var(--border); padding-left: 40px; margin-left: 15px; }
+        .timeline-item { position: relative; margin-bottom: 60px; }
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -53px; top: 0; 
+            width: 24px; height: 24px; 
+            border-radius: 50%; 
+            background: var(--bg); 
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 15px var(--accent);
+        }
 
-        /* Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 40px; border-radius: 20px;
-            transition: 0.4s;
-            position: relative; overflow: hidden;
+        /* Project Cards Special */
+        .project-card { 
+            position: relative; 
+            overflow: hidden; 
+            cursor: pointer;
         }
-        .card:hover { border-color: var(--accent); transform: translateY(-10px); background: rgba(255,255,255,0.05); }
-        .card ion-icon { font-size: 40px; color: var(--accent); margin-bottom: 20px; }
-        
-        /* Specifics */
-        .tag {
-            display: inline-block; padding: 5px 15px; border: 1px solid var(--accent);
-            border-radius: 50px; font-size: 12px; margin: 5px; color: var(--accent);
+        .project-img {
+            width: 100%; height: 220px;
+            background: linear-gradient(45deg, #121212, #1e1e1e);
+            border-radius: 20px;
+            margin-bottom: 25px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 50px; color: rgba(255,255,255,0.1);
         }
-        .timeline-item { margin-bottom: 40px; position: relative; padding-left: 30px; }
-        .timeline-item::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 2px; background: var(--accent); }
 
         /* Footer */
-        footer { padding: 50px; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); }
-        .socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
-        .socials a { font-size: 24px; color: var(--text-dim); transition: 0.3s; }
-        .socials a:hover { color: var(--accent); }
+        footer { padding: 80px 7%; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .footer-logo { font-family: 'Space Grotesk'; font-size: 28px; font-weight: 800; }
+        .socials { display: flex; gap: 30px; font-size: 28px; }
+        .socials a { color: var(--text-muted); transition: 0.3s; }
+        .socials a:hover { color: var(--accent); transform: scale(1.2); }
 
-        /* Animations */
-        .reveal { opacity: 0; transform: translateY(50px); transition: 1s all ease; }
+        /* Utility */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 60px; }
+        @media (max-width: 900px) {
+            h1 { font-size: 65px; }
+            footer { flex-direction: column; text-align: center; }
+            nav { width: 95%; padding: 10px 20px; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">VAIBHAV<span>.</span></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <nav id="navbar">
+        <div class="logo"><ion-icon name="hardware-chip-outline"></ion-icon><span>VJ</span></div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Profile</a>
+            <a href="#skills">Arsenal</a>
+            <a href="#projects">Work</a>
+            <a href="#experience">Journey</a>
         </div>
+        <a href="mailto:vaibhavjagtap906709@gmail.com" class="btn btn-primary" style="padding: 12px 25px; border-radius: 50px; font-size: 14px;">Contact</a>
     </nav>
 
     <section class="hero">
-        <h1>ROBOTICS<br><span>ENGINEER</span></h1>
-        <p>I build autonomous systems and intelligent hardware. Electronics & Telecommunication graduate specializing in Embedded IoT and AI.</p>
-        <a href="#projects" class="btn">View Systems</a>
+        <div class="hero-badge">Robotics & Embedded Engineer</div>
+        <h1>Vaibhav Jagtap <span>Innovation in Motion.</span></h1>
+        <p>B.E. Electronics & Telecommunication graduate (8.58 CGPA). Specializing in autonomous systems, IoT integration, and building real-world hardware that thinks.</p>
+        <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">View Portfolio <ion-icon name="chevron-forward"></ion-icon></a>
+            <a href="https://github.com/vaibhavjagtap1" class="btn btn-outline" target="_blank">GitHub Profile</a>
+        </div>
     </section>
 
     <section id="about" class="reveal">
-        <h2>MISSION</h2>
-        <div class="card">
-            <p style="font-size: 24px; line-height: 1.4;">
-                As a <span style="color: var(--accent);">Robotics Associate</span> at OMOT, I bridge the gap between theoretical electronics and functional robotics. 
-                With a <span style="color: var(--accent);">8.58 CGPA</span> from SPPU, I focus on building energy-efficient solutions for the next generation of smart cities.
+        <div class="section-header">
+            <h2 class="section-title">The Profile</h2>
+        </div>
+        <div class="card" style="max-width: 1000px;">
+            <p style="font-size: 24px; color: var(--text-muted); line-height: 1.5;">
+                I am an <span style="color: var(--text-main);">Electronics & Telecommunication Engineer</span> with a deep passion for <span style="color: var(--accent);">Embedded Systems, IoT, and Robotics</span>. 
+                Currently, I serve as a <b>Robotics Associate</b> at On My Own Technology (OMOT), where I design complex circuits and software for intelligent machines. 
+                My mission is to engineer high-impact solutions for smart city infrastructure and energy harvesting.
             </p>
         </div>
     </section>
 
     <section id="skills" class="reveal">
-        <h2>ARSENAL</h2>
+        <div class="section-header">
+            <h2 class="section-title">The Arsenal</h2>
+        </div>
         <div class="grid">
             <div class="card">
-                <ion-icon name="code-slash-outline"></ion-icon>
+                <div class="icon-box"><ion-icon name="code-slash-outline"></ion-icon></div>
                 <h3>Programming</h3>
-                <div style="margin-top: 20px;">
-                    <span class="tag">Embedded C</span><span class="tag">Python</span><span class="tag">C++</span><span class="tag">SQL</span>
+                <div class="tag-cloud">
+                    <span class="tag">Embedded C</span><span class="tag">Python</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">JavaScript</span>
                 </div>
             </div>
             <div class="card">
-                <ion-icon name="hardware-chip-outline"></ion-icon>
-                <h3>Hardware</h3>
-                <div style="margin-top: 20px;">
-                    <span class="tag">Arduino</span><span class="tag">Raspberry Pi</span><span class="tag">AVR</span><span class="tag">Sensing Systems</span>
+                <div class="icon-box"><ion-icon name="hardware-chip-outline"></ion-icon></div>
+                <h3>Hardware & IoT</h3>
+                <div class="tag-cloud">
+                    <span class="tag">Arduino</span><span class="tag">Raspberry Pi</span><span class="tag">AVR</span><span class="tag">Sensors</span><span class="tag">Actuators</span><span class="tag">Edge AI</span>
                 </div>
             </div>
             <div class="card">
-                <ion-icon name="construct-outline"></ion-icon>
-                <h3>Tools</h3>
-                <div style="margin-top: 20px;">
-                    <span class="tag">Proteus</span><span class="tag">MATLAB</span><span class="tag">Multisim</span><span class="tag">PCB Design</span>
+                <div class="icon-box"><ion-icon name="construct-outline"></ion-icon></div>
+                <h3>Design & Analysis</h3>
+                <div class="tag-cloud">
+                    <span class="tag">MATLAB</span><span class="tag">Proteus</span><span class="tag">Multisim</span><span class="tag">JIRA</span><span class="tag">Power BI</span><span class="tag">Git</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="reveal">
-        <h2>DEVOPS & SYSTEMS</h2>
+        <div class="section-header">
+            <h2 class="section-title">Selected Works</h2>
+        </div>
         <div class="grid">
-            <div class="card">
-                <div class="tag" style="position: absolute; top: 20px; right: 20px;">AI + IoT</div>
+            <div class="card project-card">
+                <div class="project-img"><ion-icon name="car-outline"></ion-icon></div>
+                <div class="hero-badge" style="margin-bottom: 15px;">AI + IoT</div>
                 <h3>Smart Speed Breaker</h3>
-                <p style="color: var(--text-dim); margin: 20px 0;">ML-powered vehicle detection using ResNet50 with integrated piezoelectric energy harvesting.</p>
-                <div class="tag">TensorFlow</div><div class="tag">OpenCV</div>
+                <p style="color: var(--text-muted); margin: 20px 0;">Cloud-Enhanced IoT system for smart cities. Uses ResNet50 vehicle detection and piezoelectric harvesting to power its own systems.</p>
+                <div class="tag-cloud">
+                    <span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Raspberry Pi</span>
+                </div>
             </div>
-            <div class="card">
-                <div class="tag" style="position: absolute; top: 20px; right: 20px;">Energy</div>
+            <div class="card project-card">
+                <div class="project-img"><ion-icon name="flash-outline"></ion-icon></div>
+                <div class="hero-badge" style="margin-bottom: 15px;">Energy</div>
                 <h3>Vibro-Volt</h3>
-                <p style="color: var(--text-dim); margin: 20px 0;">Vibrational energy harvesting system designed for remote sensing applications.</p>
-                <div class="tag">Arduino Nano</div><div class="tag">Power Systems</div>
+                <p style="color: var(--text-muted); margin: 20px 0;">Vibrational energy harvester designed to convert mechanical motion into usable electrical power for remote sensor clusters.</p>
+                <div class="tag-cloud">
+                    <span class="tag">Arduino Nano</span><span class="tag">Power Mgmt</span>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="experience" class="reveal">
-        <h2>JOURNEY</h2>
-        <div class="timeline-item">
-            <h3 style="color: var(--accent);">Robotics Associate</h3>
-            <p>On My Own Technology (OMOT) | 2025 - Present</p>
-            <p style="color: var(--text-dim); margin-top: 10px;">Mentoring student engineers and developing complex embedded systems using Arduino and motor drivers.</p>
+        <div class="section-header">
+            <h2 class="section-title">The Journey</h2>
         </div>
-        <div class="timeline-item">
-            <h3 style="color: var(--accent);">Embedded System Intern</h3>
-            <p>Emertxe Edutech | 2023 - 2024</p>
-            <p style="color: var(--text-dim); margin-top: 10px;">Hardware validation and circuit debugging for enterprise-level lab environments.</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="card">
+                    <h3 style="color: var(--accent);">Robotics Associate</h3>
+                    <p>On My Own Technology (OMOT) | 2025 - Present</p>
+                    <ul style="margin: 20px 0 0 20px; color: var(--text-muted); font-size: 15px;">
+                        <li>Leading hardware-software integration for student robotics projects.</li>
+                        <li>Designing embedded systems using Arduino, motor drivers, and complex sensors.</li>
+                        <li>Mentoring peers in technical troubleshooting and circuit debugging.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="card">
+                    <h3>Embedded System Intern</h3>
+                    <p>Emertxe Edutech | Aug 2023 - Oct 2023</p>
+                    <ul style="margin: 20px 0 0 20px; color: var(--text-muted); font-size: 15px;">
+                        <li>Assisted in building and validating electronic circuits for embedded applications.</li>
+                        <li>Gained hands-on experience with microcontrollers and industrial testing tools.</li>
+                        <li>Collaborated with senior engineers on hardware software co-design.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="reveal" style="text-align: center;">
-        <h2>CONNECT</h2>
-        <div class="card" style="padding: 80px 20px;">
-            <h3 style="font-size: 40px; margin-bottom: 20px;">Interested in a partnership?</h3>
-            <p style="margin-bottom: 40px;">Currently open for high-impact roles in Embedded Systems & Robotics.</p>
-            <a href="mailto:vaibhavjagtap906709@gmail.com" class="btn">Send Transmission</a>
+    <section id="contact" style="text-align: center;" class="reveal">
+        <div class="card" style="padding: 100px 30px;">
+            <h2 style="font-size: 60px; margin-bottom: 30px;">Let's Build Together.</h2>
+            <p style="font-size: 22px; color: var(--text-muted); margin-bottom: 50px;">Open for collaborations in Embedded Systems, Robotics, and Software Engineering.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="mailto:vaibhavjagtap906709@gmail.com" class="btn btn-primary">Send Transmission</a>
+                <a href="tel:+919067096225" class="btn btn-outline">Call Me</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Vaibhav Jagtap. Engineered for autonomy.</p>
+        <div class="footer-logo">VJ<span>.</span></div>
+        <p>© 2026 Vaibhav Jagtap. Engineered for Impact.</p>
         <div class="socials">
-            <a href="https://linkedin.com/in/vaibhav-jagtap-85bbb4229"><ion-icon name="logo-linkedin"></ion-icon></a>
-            <a href="https://github.com/vaibhavjagtap1"><ion-icon name="logo-github"></ion-icon></a>
-            <a href="tel:+919067096225"><ion-icon name="call-outline"></ion-icon></a>
+            <a href="https://linkedin.com/in/vaibhav-jagtap-85bbb4229" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://github.com/vaibhavjagtap1" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://instagram.com/vaibhav.darkarrow" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
         </div>
     </footer>
 
     <script>
+        // Scroll reveal logic
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 150) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Init check
+        reveal();
+
+        // Navbar scroll effect
+        window.addEventListener("scroll", () => {
+            const nav = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                nav.style.padding = "10px 30px";
+                nav.style.background = "rgba(10, 10, 20, 0.9)";
+            } else {
+                nav.style.padding = "14px 35px";
+                nav.style.background = "rgba(15, 15, 25, 0.75)";
+            }
+        });
     </script>
 </body>
 </html>
