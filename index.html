@@ -223,6 +223,78 @@
 <body>
     <div id="particles-js"></div>
 
+        /* Work Experience Section */
+        #experience {
+            padding: 80px 5%;
+            background: var(--bg);
+        }
+
+        .experience-timeline {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(10px);
+            border-left-color: var(--primary);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .experience-header h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .experience-period {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .company-name {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin: 5px 0 15px 0;
+        }
+
+        .experience-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tags .tag {
+            background: rgba(0, 208, 247, 0.1);
+            border: 1px solid var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+    
     <nav id="navbar">
         <a href="#" class="logo">
             <div class="logo-box"><ion-icon name="hardware-chip"></ion-icon></div>
@@ -236,6 +308,7 @@
      <a href="#certifications">Certs</a>
      <a href="#achievements">Impact</a>
         </div>
+                            <a href="#experience">Experience</a>
         <a href="mailto:vaibhavjagtap906709@gmail.com" class="btn btn-primary" style="padding: 10px 22px; border-radius: 50px; font-size: 13px;">Contact</a>
     </nav>
 
@@ -351,6 +424,46 @@
                 <h4 style="font-size: 12px; color: var(--accent); margin-bottom: 10px;">SUSTAINABLE ENERGY</h4>
                 <h3>Vibro-Volt Harvesting</h3>
                 <p style="color: var(--text-muted); margin-top: 15px;">High-efficiency mechanical vibrational energy harvester designed to power low-energy remote sensor arrays.</p>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Work Experience -->
+    <section id="experience">
+        <div class="section-header">
+            <p class="section-subtitle">PROFESSIONAL JOURNEY</p>
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Robotics Associate</h3>
+                    <span class="experience-period">Current Position</span>
+                </div>
+                <h4 class="company-name">OMOT Robotics</h4>
+                <p class="experience-description">Developing high-performance autonomous robotics solutions. Working on embedded systems integration, sensor fusion, and real-time control systems for industrial automation applications.</p>
+                <div class="tech-tags">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Embedded Systems</span>
+                    <span class="tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Embedded System Intern</h3>
+                    <span class="experience-period">Aug 2023 - Oct 2023</span>
+                </div>
+                <h4 class="company-name">Emertxe Information Technologies</h4>
+                <p class="experience-description">Assisted in developing and testing electronic circuits for embedded applications. Conducted research and data gathering for ongoing embedded systems projects. Collaborated with senior engineers to troubleshoot and debug hardware/software issues. Gained hands-on experience with microcontrollers, circuit design, and testing tools.</p>
+                <div class="tech-tags">
+                    <span class="tag">Embedded C</span>
+                    <span class="tag">Circuit Analysis</span>
+                    <span class="tag">Microcontrollers</span>
+                    <span class="tag">Testing</span>
+                </div>
             </div>
         </div>
     </section>
@@ -528,4 +641,5 @@
     </script>
 </body>
 </html>
+
 
